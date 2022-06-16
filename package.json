@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "devDependencies": {
     "tailwindcss": "^3.1.2"
   },
@@ -79,4 +80,15 @@
     "url": "https://github.com/Abhi20220/Team-Runner/issues"
   },
   "homepage": "https://github.com/Abhi20220/Team-Runner#readme"
+=======
+    
+"dependencies": {
+"bcrypt": "^5.0.1",
+"dotenv": "^16.0.1",
+"express": "^4.18.1",
+"mysql2": "^2.3.3",
+"sequelize": "^6.20.1"
+    
+}
+>>>>>>> 28f9a051be8ac9179ae38369eb28566e96bf824e
 }
