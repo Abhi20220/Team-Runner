@@ -1,28 +1,34 @@
 const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../config/connection')
 
-class Team extends Model {}
+class Run extends Model {}
 
-Team.init(
+Run.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    team_title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    total_distance: {
+    date_created: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
+        key: 'id',
+      },
+    },
+    distance: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'run',
         key: 'id',
       },
     },
@@ -31,8 +37,8 @@ Team.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'team',
+    modelName: 'run',
   }
 )
 
-module.exports = Team
+module.exports = Run
