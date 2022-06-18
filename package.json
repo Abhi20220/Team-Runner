@@ -22,6 +22,7 @@
     "camelcase-css": "^2.0.1",
     "chokidar": "^3.5.3",
     "color-name": "^1.1.4",
+    "connect-session-sequelize": "^7.1.4",
     "cssesc": "^3.0.0",
     "defined": "^1.0.0",
     "detective": "^5.2.1",
