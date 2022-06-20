@@ -2,6 +2,7 @@ const router = require('express').Router()
 const { Team } = require('../../models')
 const withAuth = require('../../utils/auth')
 
+//Creates a Team
 router.post('/', withAuth, async (req, res) => {
     try {
         const newTeam = await Team.create({
@@ -14,6 +15,26 @@ router.post('/', withAuth, async (req, res) => {
     }
 })
 
+// Updates a team
+
+router.put('/:id', async (req, res) => {
+    const updatedTeam =  await Team.update (
+        {
+            id: req.body.id,
+            team_title: req.body.team_title,
+            total_distance: req.body.total_distance,
+            user_id: req.body.user_id,
+        },
+        {
+            where: {
+                id: req.params.id,
+            },
+        }
+    );
+    res.json(updatedTeam);
+});
+
+//Deletes a Team
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const teamData = await Team.destroy({

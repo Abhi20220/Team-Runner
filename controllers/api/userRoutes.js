@@ -57,4 +57,22 @@ router.post('/logout', (req, res) => {
   }
 })
 
+
+router.put('/:id', async (req, res) => {
+  const updatedUser =  await User.update (
+      {
+          id: req.body.id,
+          name: req.body.name,
+          email: req.body.email,
+          password: req.body.password,
+      },
+      {
+          where: {
+              id: req.params.id,
+          },
+      }
+  );
+  res.json(updatedUser);
+});
+
 module.exports = router
