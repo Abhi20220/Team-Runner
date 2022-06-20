@@ -29,6 +29,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+//GETS all teams
 router.get('/', async (req, res) => {
     try {
         const teamData = await Team.findByPk(req.params.id);
