@@ -55,8 +55,20 @@ router.post('/logout', (req, res) => {
   } else {
     res.status(404).end()
   }
-})
+});
 
+router.get('/:id', async (req, res) => {
+  try {
+      const userInfo = await User.findByPk(req.params.id);
+      if (!userInfo) {
+          res.status(404).json ({ message: 'no user with this id!'});
+          return;
+      }
+      res.status(200).json(userInfo);
+  } catch (err) {
+      res.status(500).json(err)
+  }
+});
 
 router.put('/:id', async (req, res) => {
   const updatedUser =  await User.update (
