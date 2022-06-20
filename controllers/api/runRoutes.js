@@ -15,6 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 })
 
+//gets one users data
 router.get('/:id', async (req, res) => {
   try {
       const runData = await Run.findByPk(req.params.id);
@@ -27,6 +28,8 @@ router.get('/:id', async (req, res) => {
       res.status(500).json(err)
   }
 });
+
+
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

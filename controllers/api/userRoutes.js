@@ -57,6 +57,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//gets one user id
 router.get('/:id', async (req, res) => {
   try {
       const userInfo = await User.findByPk(req.params.id);
@@ -70,6 +71,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+//gets all users
+router.get('/', async (req, res) => {
+  try {
+      const userInfo = await User.findByPk(req.params.id);
+      if (!userInfo) {
+          res.status(404).json ({ message: 'There are no users'});
+          return;
+      }
+      res.status(200).json(userInfo);
+  } catch (err) {
+      res.status(500).json(err)
+  }
+});
+
+
+//creates a user
 router.put('/:id', async (req, res) => {
   const updatedUser =  await User.update (
       {
