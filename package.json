@@ -4,7 +4,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build-css": "tailwindcss build src/styles.css -o public/css/styles.css"
+    "build-css": "tailwindcss build src/styles.css -o public/css/styles.css",
+    "seed": "" 
   },
   "name": "team-runner",
   "description": "",
