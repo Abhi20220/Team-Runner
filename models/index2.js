@@ -29,4 +29,4 @@ Team.hasMany(Run, {
   onDelete: 'CASCADE',
 })
 
-module.exports = { User, Team, Run } 
+module.exports = { User, Team, Run }
