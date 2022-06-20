@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Team, Run } = require('../../models')
+const { Team } = require('../../models')
 const withAuth = require('../../utils/auth')
 
 router.post('/', withAuth, async (req, res) => {
@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const teamData = await Run.destroy({
+        const teamData = await Team.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
