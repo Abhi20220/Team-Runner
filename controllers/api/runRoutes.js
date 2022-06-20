@@ -15,6 +15,19 @@ router.post('/', withAuth, async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+      const runData = await Run.findByPk(req.params.id);
+      if (!runData) {
+          res.status(404).json({ message: 'There is no run data for this user'});
+          return;
+      }
+      res.status(200).json(runData);
+  } catch (err) {
+      res.status(500).json(err)
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const runData = await Run.destroy({

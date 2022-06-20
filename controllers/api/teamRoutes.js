@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
     try {
         const teamData = await Team.findByPk(req.params.id);
         if (!teamData) {
-            res.status(404).json ({ message: 'no Team with this id!'});
+            res.status(404).json({ message: 'no Team with this id!'});
             return;
         }
         res.status(200).json(teamData);
