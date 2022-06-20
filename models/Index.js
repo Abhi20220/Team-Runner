@@ -1,12 +1,32 @@
-const Player = require('./Player');
-const Team = require('./Team');
+const User = require('./User')
+const Team = require('./Team')
+const Run = require('./Run')
 
-Team.hasMany(Player, {
+User.hasMany(Run, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+})
 
-});
+Run.belongsTo(User, {
+  foreignKey: 'user_id',
+})
 
-Player.belongsTo(Team, {
+User.belongsTo(Team, {
+  foreignKey: 'user_id',
+})
 
-});
+Run.belongsTo(Team, {
+  foreignKey: 'team_id',
+})
 
-module.exports = { Player, Team };
+Team.hasMany(User, {
+  foreignKey: 'team_id',
+  onDelete: 'CASCADE',
+})
+
+Team.hasMany(Run, {
+  foreignKey: 'team_id',
+  onDelete: 'CASCADE',
+})
+
+module.exports = { User, Team, Run } 
