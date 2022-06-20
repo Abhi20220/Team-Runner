@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS running_db;
-CREATE DATABASE running_db;
