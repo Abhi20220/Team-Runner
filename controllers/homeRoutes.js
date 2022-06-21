@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     const posts = dataTeam.map((post) => post.get({ plain: true }))
 
     res.render('homepage', {
-      posts,
+        runs,
       logged_in: req.session.logged_in,
     })
   } catch (err) {
@@ -75,3 +75,6 @@ router.get('/login', (req, res) => {
 
 
 module.exports = router
+
+
+//delete
