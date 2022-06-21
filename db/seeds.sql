@@ -10,3 +10,4 @@ VALUES ("Abhi", "Shek", "Beast", true),
        ("George", "Bush", "President", false),
        ("Alice", "Paprika", "Redlips", true);
 
+//delete
