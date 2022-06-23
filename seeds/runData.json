@@ -1,0 +1,18 @@
+[
+    {
+      "date_created": "02/11/2022",
+      "user_id": "1",
+      "distance": "1000km"
+    },
+    {
+        "date_created": "01/09/2022",
+        "user_id": "2",
+        "distance": "5656km"
+    },
+    {
+        "date_created": "13/01/2022",
+        "user_id": "3",
+        "distance": "123123km"
+    }
+  ]
+  
