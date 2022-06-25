@@ -36,13 +36,16 @@ function Stop() {
   trackBtn.innerHTML = 'Start'
 }
 
+let runArr = []
 let watchID
 let geoLoc
 
 function showLocation(position) {
   let latitude = position.coords.latitude
   let longitude = position.coords.longitude
-  console.log('Latitude : ' + latitude + ' Longitude: ' + longitude)
+  let runPoint = { lat: latitude, lon: longitude }
+  runArr.push(runPoint)
+  console.log('Latitude : ' + runPoint.lat + ' Longitude: ' + runPoint.lon)
 }
 
 function errorHandler(err) {
