@@ -1,0 +1,18 @@
+[
+    {
+      "team_title": "Crows",
+      "total_distance": "1000km",
+      "user_id": "1"
+    },
+    {
+        "team_title": "power",
+        "total_distance": "5656km",
+        "user_id": "2"
+    },
+    {
+        "team_title": "Geelong",
+        "total_distance": "123123km",
+        "user_id": "3"
+    }
+  ]
+  
