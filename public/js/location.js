@@ -1,42 +1,28 @@
-// const startTracking = () => {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.watchPosition(function (position) {
-//       console.log(position)
-//     })
-//   } else {
-//     console.log('Geolocation is not supported')
-//   }
-// }
-
-// const stopTracking = () => {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.watchPosition(function (position) {
-//       console.log(position)
-//     })
-//   } else {
-//     console.log('Geolocation is not supported')
-//   }
-// }
-
 let trackBtn = document.getElementById('trackBtn')
 
-trackBtn.addEventListener('click', Start)
+trackBtn.addEventListener('click', start)
 
-function Start() {
+function start() {
+  runArr = []
+  // { lat: -34.92123, lon: 138.599503 }, // ADL
+  // { lat: -37.840935, lon: 144.946457 }, // MELB
+
+  getLocationUpdate()
   console.log('Started')
-  trackBtn.removeEventListener('click', Start)
-  trackBtn.addEventListener('click', Stop)
+  trackBtn.removeEventListener('click', start)
+  trackBtn.addEventListener('click', stop)
   trackBtn.innerHTML = 'Stop'
 }
 
-function Stop() {
+function stop() {
+  stopLocationUpdate()
   console.log('Stopped')
-  trackBtn.removeEventListener('click', Stop)
-  trackBtn.addEventListener('click', Start)
+  trackBtn.removeEventListener('click', stop)
+  trackBtn.addEventListener('click', start)
   trackBtn.innerHTML = 'Start'
 }
 
-let runArr = []
+let runArr
 let watchID
 let geoLoc
 
@@ -45,7 +31,14 @@ function showLocation(position) {
   let longitude = position.coords.longitude
   let runPoint = { lat: latitude, lon: longitude }
   runArr.push(runPoint)
-  console.log('Latitude : ' + runPoint.lat + ' Longitude: ' + runPoint.lon)
+  console.log(
+    'Step #' +
+      runArr.length +
+      ' Latitude : ' +
+      runPoint.lat +
+      ' Longitude : ' +
+      runPoint.lon
+  )
 }
 
 function errorHandler(err) {
@@ -59,7 +52,7 @@ function errorHandler(err) {
 function getLocationUpdate() {
   if (navigator.geolocation) {
     // timeout at 5000 milliseconds (5 seconds)
-    let options = { timeout: 5000 }
+    let options = { timeout: 10000 }
     geoLoc = navigator.geolocation
     watchID = geoLoc.watchPosition(showLocation, errorHandler, options)
   } else {
@@ -70,9 +63,25 @@ function getLocationUpdate() {
 function stopLocationUpdate() {
   // Cancel the updates when the user clicks a button.
   navigator.geolocation.clearWatch(watchID)
+  console.log('GPS grabs: ' + runArr.length)
+  let totalDistance = 0
+  if (runArr.length > 1) {
+    // 2 points minimum to calculate a distance
+    for (let i = 1; i < runArr.length; i++) {
+      const legDist = calcCrow(
+        runArr[i - 1].lat,
+        runArr[i - 1].lon,
+        runArr[i].lat,
+        runArr[i].lon
+      )
+      console.log('Leg #' + i + ' = ' + legDist.toFixed(1) + 'km')
+      totalDistance += legDist
+    }
+  }
+  const finalDistMsg = 'Total distance run: ' + totalDistance.toFixed(1) + 'km'
+  console.log(finalDistMsg)
+  alert(finalDistMsg)
 }
-
-alert(calcCrow(38.9285, 138.6007, 37.8136, 144.9631).toFixed(1))
 
 //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
 function calcCrow(lat1, lon1, lat2, lon2) {
