@@ -26,14 +26,14 @@ function Start() {
   console.log('Started')
   trackBtn.removeEventListener('click', Start)
   trackBtn.addEventListener('click', Stop)
-  trackBtn.value = 'Stop'
+  trackBtn.innerHTML = 'Stop'
 }
 
 function Stop() {
   console.log('Stopped')
   trackBtn.removeEventListener('click', Stop)
   trackBtn.addEventListener('click', Start)
-  trackBtn.value = 'Start'
+  trackBtn.innerHTML = 'Start'
 }
 
 let watchID
