@@ -3,25 +3,12 @@ const { User, Team, Run } = require('../models')
 const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
-  try {
-    const dataTeam = await Team.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    })
-
-    const posts = dataTeam.map((post) => post.get({ plain: true }))
-
-    res.render('homepage', {
-        runs,
-      logged_in: req.session.logged_in,
-    })
-  } catch (err) {
-    res.status(500).json(err)
+  if (req.session.logged_in) {
+    res.redirect('/profile')
+    return
   }
+
+  res.render('dashboard')
 })
 
 router.get('/Team/:id', async (req, res) => {
@@ -73,8 +60,6 @@ router.get('/login', (req, res) => {
   res.render('login')
 })
 
-
 module.exports = router
-
 
 //delete
