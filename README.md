@@ -4,30 +4,7 @@
 
 ## Goals
 
-Project2
 
- +-- config
- |
- +-- controllers --api
- |   
- +-- db
- +-- models
- | 
- +-- public
- |  |  
- |  |-- css
- |      |
- |      + -- style.css
- |
- +-- src
- +-- utils 
- +-- views
- +-- server.js
- +-- package.json
- +-- package-lock.json
- +-- README.md
- +-- package-lock.json 
- +-- tailwind.config.js
 
 
 ## Problems and Solutions
@@ -62,6 +39,32 @@ Project2
 4. George Kaluwin
 5. Abhishek Chaudhary
 ```
+## MVC structure
+
+Project2
+
+ +-- config
+ |
+ +-- controllers --api
+ |   
+ +-- db
+ +-- models
+ | 
+ +-- public
+ |  |  
+ |  |-- css
+ |      |
+ |      + -- style.css
+ |
+ +-- src
+ +-- utils 
+ +-- views
+ +-- server.js
+ +-- package.json
+ +-- package-lock.json
+ +-- README.md
+ +-- package-lock.json 
+ +-- tailwind.config.js
 
 ## Mock Up
 
