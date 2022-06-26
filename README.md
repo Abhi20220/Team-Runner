@@ -3,10 +3,12 @@
 ## Website URL
 
 ## Goals
-Project
+
+Project2
+
  +-- config
  |
- +-- controllers
+ +-- controllers --api
  |   
  +-- db
  +-- models
@@ -22,6 +24,8 @@ Project
  +-- views
  +-- server.js
  +-- package.json
+ +-- package-lock.json
+ +-- README.md
  +-- package-lock.json 
  +-- tailwind.config.js
 
