@@ -3,9 +3,32 @@
 ## Website URL
 
 ## Goals
+Project
+ +-- config
+ |
+ +-- controllers
+ |   
+ +-- db
+ +-- models
+ | 
+ +-- public
+ |  |  
+ |  |-- css
+ |      |
+ |      + -- style.css
+ |
+ +-- src
+ +-- utils 
+ +-- views
+ +-- server.js
+ +-- package.json
+ +-- package-lock.json 
+ +-- tailwind.config.js
 
 
 ## Problems and Solutions
+
+* Learned how to use tailwind to polished UI
 
 ## Completed Requirements
 ```
