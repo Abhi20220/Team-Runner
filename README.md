@@ -20,7 +20,7 @@
 5. Meets the MVC paradiagm
 6. Authentication
 7. API keys
-
+```
 
 ## List of Technologies Used
 ```
@@ -40,7 +40,7 @@
 5. Abhishek Chaudhary
 ```
 ## MVC structure
-
+```
 Project2
 
  +-- config
@@ -65,12 +65,16 @@ Project2
  +-- README.md
  +-- package-lock.json 
  +-- tailwind.config.js
-
+```
 ## Mock Up
-
+```
+```
 ## Features/Interactions/Points of Interests
 
+```
+```
 ## License
+```
 	MIT License
 
 	Copyright (c) 2022 Kym Reilly, Elsa Li, Marcus Lopes, George Kaluwin, Abhishek Chaudhary
@@ -92,15 +96,17 @@ Project2
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 	SOFTWARE.
-
+```
 ## Contact Information
+```
 	Kym Reilly: kymreilly.87@gmail.com
 	Elsa Li: https://github.com/elsa5152
 	Marcus Lopes: https://github.com/marcus-lopes
 	George Kaluwin: georgekaluwin@gmail.com
 	Abhishek Chaudhary: abhishekchaudhary1442016@gmail.com
-	
+```
 ## Credit
+```
     Kym Reilly
 	Elsa Li
 	Marcus Lopes
