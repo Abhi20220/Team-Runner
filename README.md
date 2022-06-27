@@ -1,7 +1,7 @@
 # Team-Runner
 
 ## Website URL
-https://obscure-fjord-41788.herokuapp.com/
+https://team-runner-project.herokuapp.com/
 
 
 ## Goals
