@@ -45,6 +45,9 @@ We also ran into a problem where merging deleted our main code, so we had to rev
 The following images show the web pages appearance:
 ![home page](./Images/mock%20up.jpg)
 
+The following image shows the functionality of the geolocation API based on the users position:
+![function](./Images/functionality.jpg)
+
 ## Video Demonstration
 https://drive.google.com/file/d/1BnivkXaUGHDOHl84CKpKfLPSwcUeh3AF/view
 
