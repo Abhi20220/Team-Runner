@@ -1,24 +1,35 @@
 # Team-Runner
 
 ## Website URL
+https://obscure-fjord-41788.herokuapp.com/
+
 
 ## Goals
+My team built this application because the client wanted an app where they are able to track a users distance from their intial destination to their final destination, resulting in a 'x km' has been traveled. This is done while the user is apart of a team where the following elements are shown:
+
+```
+1. My run (your individual run distance)
+2. My Team (your teams run distance)
+3. My goal (how many km/month)
+4. Graphs (line graph and team distance graph)
+```
 
 
 ## Problems and Solutions
+There were many problems that were faced with our team-runner project. The primary problem was involved with using git. Mainly  pushing and merging code. A problem that arose from this was that when trying to merge code with a collaborators code, it would be very time consuming due to merge conflicts. 
 
-## Completed Requirements
-```
-1.
-2.
-3.
-```
+We also ran into a problem where merging deleted our main code, so we had to revert the changes and work around the merge by deleting our local repo and git cloning the main. 
+
+
 
 ## List of Technologies Used
 ```
-1.
-2.
-3.
+1. Geolocation API
+2. HTML/Javascript
+3. Handlebars
+4. Tailwind CSS
+5. MySql
+6. Express
 ```
 
 ## Collaborators
@@ -31,8 +42,12 @@
 ```
 
 ## Mock Up
+The following images show the web pages appearance:
+![home page](./Images/mock%20up.jpg)
 
-## Features/Interactions/Points of Interests
+## Video Demonstration
+https://drive.google.com/file/d/1BnivkXaUGHDOHl84CKpKfLPSwcUeh3AF/view
+
 
 ## License
 	MIT License
